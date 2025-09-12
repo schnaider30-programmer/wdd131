@@ -1,14 +1,30 @@
 const input = document.querySelector("#favchap");
-const button = document.querySelector("button");
-const list = document.querySelector("#li");
+const addButton = document.querySelector("button");
+const list = document.querySelector("#list");
 
-const entry = document.createElement("li");
-const dltButton = document.createElement("button");
+addButton.addEventListener("click", function () {
+    if (input.value.trim() != "") {
+        const li = document.createElement("li");
+        const dltButton = document.createElement("button");
 
-entry.textContent = input.value;
-dltButton.textContent = "❌";
-dltButton.setAttribute("aria-label", "Remove Alma 5");
+        li.textContent = input.value;
+        dltButton.textContent = "❌";
+        dltButton.setAttribute("aria-label", "Remove Alma 5");
 
-entry.append(dltButton);
+        li.append(dltButton);
 
-list.append(entry)
+        list.append(li);
+
+        dltButton.addEventListener("click", function () {
+            list.removeChild(li);
+            input.focus();
+        });
+    } else {
+        input.focus();
+        alert("Please enter your favorite chapter!");
+    }
+    input.value = "";
+    input.focus();
+});
+
+
