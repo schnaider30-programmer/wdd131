@@ -2,10 +2,7 @@
     header {
         align-items: center;
         display: flex;
-        justify-content: space-around;
-    }
-    nav {
-        margin-right: 5rem;
+        justify-content: space-between;
     }
 
     .navigation {
@@ -13,7 +10,7 @@
         flex-direction: row;
         justify-content: space-around;
         max-width: 100%;
-        gap: 1rem;
+        /* gap: 1rem; */
         align-items: center;
     }
 
