@@ -1,7 +1,8 @@
-@media (max-width: 640px) {
+@media (max-width: 640px) 
+{
     .mobile-view {
         display: block;
-    };
+    }
     
     .mobile-view {
         width: 100px;
@@ -10,7 +11,7 @@
     }
 
     .hero {
-        display: static;
+        position: static;
         display: flex;
         flex-direction: column;
     }
