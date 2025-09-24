@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This page is to display the datas and the weather of my country.">
+    <meta name="author" content="Schnaider Jean Louis">
+    <title>Country Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,500;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/place.css">
+    <link rel="stylesheet" href="styles/responsive-place.css">
+    <script src="scripts/place.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1 class="main-heading">Japan</h1>
+    </header>
+    <main>
+        <div class="hero">
+            <picture>
+                <source media="(min-width: 750px)" srcset="images/hero-small.webp">
+                <source media="(min-width: 400px)" srcset="images/sakura-large.webp">
+                <img src="images/sakura-large.webp" alt="A picture of a Sakura Tree from Japan" width="900" height="500">
+            </picture>
+            <section class="data-section">
+                <h2 class="headings">Data</h2>
+                <p><span>Area: </span>377,970 Km²</p>
+                <p><span>Population: </span>123 975 371</p>
+                <p><span>Capital: </span>Tokyo</p>
+                <p><span>Language: </span>Japanese</p>
+                <p><span>Currency: </span>Yen</p>
+                <p><span>Time Zone: </span>UTC+9</p>
+                <p><span>Calling Code: </span>+81</p>
+                <p><span>Internet TLD: </span>.jp</p>
+            </section>
+            <section class="weather-section">
+                <h2 class="headings">Weather</h2>
+                <div class="mobile-view">
+                    <img src="images/weather-icon.svg" alt="SVG weather icon for mobile view">
+                </div>
+                <p><span>Temperature: </span>25 °C</p>
+                <p><span>Conditions: </span>Partly Sunny</p>
+                <p><span>Wind: </span>9Km/h</p>
+                <p><span>Wind Chill: </span><span id="windchill"></span></p>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentYear"></span> | Schnaider Jean Louis | Haiti</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>

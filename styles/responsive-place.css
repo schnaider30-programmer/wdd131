@@ -1,0 +1,29 @@
+@media (max-width: 640px) {
+    .mobile-view {
+        display: block;
+    };
+    
+    .mobile-view {
+        width: 100px;
+        margin: auto;
+        display: none;
+    }
+
+    .hero {
+        display: static;
+        display: flex;
+        flex-direction: column;
+    }
+    .data-section, .weather-section {
+        position: static;
+    }
+
+    .weather-section h2::after {
+        content: none;
+    }
+
+    .main-heading {
+        padding: 0.5rem;
+        font-size: 1.5rem;
+    }
+}
