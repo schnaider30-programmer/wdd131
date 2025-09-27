@@ -7,7 +7,7 @@
     .mobile-view {
         width: 100px;
         margin: auto;
-        display: none;
+        display: block;
     }
 
     .hero {
