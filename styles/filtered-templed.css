@@ -1,0 +1,156 @@
+:root {
+    --white: #ffffff;
+    --light-gray: #f5f7fb;
+    --dark-gray: #2c3e50;
+    --black: #000000;
+    --accent: #1e90ff;
+    --gray: #bdc3c7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* outline: 1px solid red; */
+
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 300;
+}
+
+header {
+    background-color: var(--dark-gray);
+    padding: 1rem;
+    display: grid;
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    text-align: left;
+    white-space: nowrap;
+    color: var(--light-gray);
+}
+
+button {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+.navigation {
+    padding: 10px;
+    background-color: var(--gray);
+    border-radius: 5px;
+    list-style: none;
+    display: none;
+    flex-direction: column;
+}
+
+.navigation.show {
+    display: flex;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: var(--black);
+    display: block;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.navigation a:hover {
+    text-decoration:double underline;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: inset 0 0 10px var(--white);
+}
+
+nav {
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+#menu {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    background-color: #eee;
+    color: #000;
+    cursor: pointer;
+}
+
+#menu::before {
+    content: "≡";
+}
+
+#menu.show::before {
+    content: "X";
+}
+
+.card-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.heading h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--dark-gray);
+    width: 90%;
+    margin: 1.5rem auto;
+    border-radius: 10px;
+    box-shadow: 0 0 5px var(--black);
+}
+
+section {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    box-sizing: content-box;
+    background-color: var(--gray);
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+
+section img {
+    width: 100%;
+    border-radius: 10px;
+    height: 250px;
+    margin: 0.5rem;
+}
+
+span {
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+
+
+figcaption {
+    margin-top: 0.5rem;
+    font-weight: 500;
+    grid-column: 1;
+}
+
+footer {
+    background-color: var(--dark-gray);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
