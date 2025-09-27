@@ -121,7 +121,7 @@ home.addEventListener("click", () => {
 oldTemple.addEventListener("click", () => {
     let oldTempleArray = temples.filter(temple => {
         const oldest = parseInt(temple.dedicated.split(",")[0]);
-        return oldest < 2000;
+        return oldest < 1900;
     });
     createTempleCard(oldTempleArray);
 })
@@ -145,7 +145,7 @@ bigTemple.addEventListener("click", () => {
 smallTemple.addEventListener("click", () => {
     const smallerTemple = temples.filter(temple => {
         smaller = parseInt(temple.area);
-        return smaller < 90000;
+        return smaller < 10000;
     })
     createTempleCard(smallerTemple);
 })
