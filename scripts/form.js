@@ -37,20 +37,15 @@ if (select) {
     })
 }
 
+const form = document.querySelector("form");
 
-// Incrémenter le compteur
-let count = localStorage.getItem("review-count");
+form.addEventListener("submit", () => {
+    let count = localStorage.getItem("reviewCount");
+    count = count ? parseInt(count, 10) + 1 : 1;
+    localStorage.setItem("reviewCount", count);
+});
 
-if (!count) {
-    count = 1;
-} else {
-    count = parseInt(count) + 1;
-}
 
-localStorage.setItem("review-count", count);
-
-// Afficher le compteur
-document.getElementById("review-count").textContent = count;
 
 let year = new Date().getFullYear();
 document.querySelector("#currentYear").innerHTML = year;
