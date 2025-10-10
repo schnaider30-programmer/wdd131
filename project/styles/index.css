@@ -49,13 +49,13 @@ main {
 
 .nav-menu ul a {
     font-size: 1.2rem;
-    transition: box-shadow 0.4s ease-in-out;
+    transition: box-shadow 0.4s ease-out;
     padding: 0.5rem;
-    color: var(--color-light-silver);
+    color: var(--color-charcoal);
 }
 
 .nav-menu ul a:hover {
-    color: var(--color-charcoal);
+    color: var(--color-light-silver);
     box-shadow: 0 0 5px 2px var(--color-silver);
 }
 
@@ -131,6 +131,7 @@ header.sticky {
     top: 0;
     left: 0;
     z-index: 0;
+    object-position: center top;
 }
 
 /* a surveiller lors de la redimension de la page */
