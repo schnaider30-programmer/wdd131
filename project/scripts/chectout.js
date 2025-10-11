@@ -1,4 +1,4 @@
-const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
 const cartList = document.getElementById("cart-items");
 const totalDisplay = document.getElementById("total-price");
@@ -31,7 +31,10 @@ totalDisplay.textContent = `Total : $${total.toFixed(2)}`;
 const confirmationBtn = document.getElementById("confirm-order");
 
 confirmationBtn.addEventListener("click", () => {
-    if (cartItems.lengh === 0) return;
+    if (cartItems.length === 0) { 
+        showConfirmationMessage("The vault is empty noble one. Select your items before sealing the order.");
+        return;
+    }
 
     let history = JSON.parse(localStorage.getItem("orderHistory")) || [];
     history.push({
@@ -45,16 +48,14 @@ confirmationBtn.addEventListener("click", () => {
     localStorage.removeItem("cartItems");
     localStorage.removeItem("cartCount");
 
+    cartItems = [];
     //reset display element in page 
+    document.getElementById("cart-count").textContent = "0";
+
     cartList.innerHTML = "";
     totalDisplay.textContent = "Total : $0.00";
-    if (cartItems.length > 0) {
-        showConfirmationMessage("Your order has been sealed in the Imperial Vault!");
-    }
-    else {
-        showConfirmationMessage("The vault is empty noble one. Select your items before sealing the order.")
-    };
-
+   
+    showConfirmationMessage("Your order has been sealed in the Imperial Vault!");
 });
 
 function showConfirmationMessage(message) {
