@@ -10,12 +10,15 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,400;0,500;0,700;1,100;1,400;1,500;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer"> -->
+
     <!-- <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"> -->
 
-    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/product.css">
 
-    <title>Home - Imperial Vault</title>
+    <title>Our Products- Imperial Vault</title>
     <script src="scripts/index.js" defer></script>
+    <script src="scripts/products.js" defer></script>
 </head>
 
 <body>
@@ -33,6 +36,7 @@
 
         <div class="menu-icon">
             <!-- <i class='bx bx-menu' id="hamburger-menu"></i> -->
+
             <button class="menu-btn" aria-label="Menu" id="hamburger-menu">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
@@ -57,7 +61,7 @@
                         <h2>Express yourself with style</h2>
                     </div>
                 </div>
-
+        
                 <div class="hero-slide">
                     <picture>
                         <source media="(max-width: 1200px)" srcset="images/hero2-small.webp">
@@ -69,12 +73,12 @@
                         <h2>Refine your style with precision</h2>
                     </div>
                 </div>
-
+        
                 <div class="hero-slide">
                     <picture>
                         <source media="(max-width: 700px)" srcset="images/hero3-img.webp">
                         <img src="images/watch-photography(1).webp" alt="Luxury Watch">
-
+        
                     </picture>
                     <div class="hero-text">
                         <h1>Style in motion</h1>
@@ -84,102 +88,72 @@
             </div>
         </section>
 
+        <section class="products-section">
 
-        <section class="category-section">
-            <div class="heading">
-                <h2>featured categories</h2>
+            <div class="men-collection">
+                <h2>Men's Collection</h2>
+                <div class="suit-collection">
+                    <h3>Suits</h3>
+                    <div class="product-grid">
+                        
+                    </div>
+                </div>
+
+                <div class="shoe-collection">
+                    <h3>Shoes</h3>
+
+                    <div class="product-grid">
+
+                    </div>
+                </div>
+
+                <div class="sneaker-collection">
+                    <h3>Sneakers</h3>
+                    <div class="product-grid">
+
+                    </div>
+                </div>
+
             </div>
-            <div class="category-container">
 
-                <div class="category-item">
-                    <img src="images/braveman.webp" alt="">
-                    <h3>Men Suit</h3>
-                </div>
+            <div class="women-collection">
+                <h2>Women's Collection</h2>
 
-                <div class="category-item">
-                    <img src="images/anne-klein.webp" alt="">
-                    <h3>Women Dress</h3>
-                </div>
-
-                <div class="category-item">
-                    <img src="images/sarto.webp" alt="">
-                    <h3>Women's shoes</h3>
-                </div>
-
-                <div class="category-item">
-                    <img src="images/shoe.webp" alt="">
-                    <h3>Men's Shoes</h3>
-                </div>
-
-                <div class="category-item">
-                    <img src="images/show-watch.webp" alt="">
-                    <h3>Watches</h3>
-                </div>
-
-                <div class="category-item">
-                    <img src="images/laptop.webp" alt="">
-                    <h3>Electronics</h3>
-                </div>
-            </div>
-        </section>
-
-        <section class="top-rated products-section">
+                <div class="dresses">
+                    <h3>Dresses</h3>
+                    <div class="product-grid">
                 
-            <div class="heading">
-                <h2>top rated Products</h2>
+                    </div>
+                </div>
+
+                <div class="women-shoe-collection">
+                    <h3>Shoes</h3>
+                    <div class="product-grid">
+                
+                    </div>
+                </div>
+
+                <div class="women-sneaker-collection">
+                    <h3>Sneakers</h3>
+                    <div class="product-grid">
+                
+                    </div>
+                </div>
+
             </div>
-            <div class="top-products-section product-grid">
 
-                <div class="product-card">
-                    <img src="images/braveman.webp" alt="Men's Suit">
-                    <h2>Classic Shirt</h2>
-                    <p class="description">men's 3-piece classic fit performance stretch suit</p>
-                    <p class="price">$350.00</p>
-                    <div class="stars">★★★★☆</div>
+            <div class="tech-collection">
+
+                <h3>Technology Collection</h3>
+                <div class="product-grid">
+
                 </div>
 
-                <div class="product-card">
-                    <img src="images/nine-west.webp" alt="Nine West Women Shoe">
-                    <h2>Nine West</h2>
-                    <p class="description">women's kadon pointy toe block heel dress booties</p>
-                    <p class="price">$99.00</p>
-                    <div class="stars">★★★★★</div>
-                </div>
-
-                <div class="product-card">
-                    <img src="images/ted-baker.webp" alt="Shoes">
-                    <h2>Ted Baker</h2>
-                    <p class="description">Men's Hackney Lace Up Shoe</p>
-                    <p class="price">$133.00</p>
-                    <div class="stars">★★★★☆</div>
-                </div>
-
-                <div class="product-card">
-                    <img src="images/watch1.webp" alt="Sneakers">
-                    <h2>movado</h2>
-                    <p class="description">men's quest swiss quartz ionic gold pvd steel 40mm watch</p>
-                    <p class="price">$695.00</p>
-                    <div class="stars">★★★★☆</div>
-                </div>
             </div>
-            <a href="products.html" class="btn" target="_blank">See All products</a>
 
-        </section>
-
-        <section class="client-reviews">
-            <div class="reviews">
-                <h2 class="heading">Client Review</h2>
-                <img src="images/client-review.webp" alt="">
-                <p>Imperial Vault completely exceeded my expectations. The product quality is outstanding, <br>and the
-                    customer service was
-                    genuinely attentive. I found exactly what I needed, and the delivery was faster than I anticipated.
-                    <br> I’ll definitely be
-                    coming back for more!
-                </p>
-                <h3>Jean Louis Schnaider</h3>
-            </div>
         </section>
     </main>
+
     <footer>
         <p>&copy; <span id="currentYear"></span> | Schnaider Jean Louis | Haiti</p>
         <p id="lastModified"></p>

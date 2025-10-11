@@ -1,0 +1,339 @@
+:root {
+    --heading-font: "Ubuntu", "Poppins", Arial, Helvetica, sans-serif;
+    --text-font: "Playfair Display", "Poppins", Arial, Helvetica, sans-serif;
+    --color-black: rgba(0, 0, 0, 1);
+    --color-charcoal: rgba(34, 34, 34, 1);
+    --color-silver: rgba(192, 192, 192, 1);
+    --color-light-silver: rgba(220, 220, 220, 1);
+    --color-purple: rgba(75, 0, 130, 1);
+    --text-color: var(--color-light-silver);
+    --heading-color: var(--color-silver);
+    --background-main: var(--color-black);
+    --background-alt: var(--color-charcoal);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Ubuntu", Arial, Helvetica, sans-serif;
+}
+
+main {
+    background-color: var(--color-light-silver);
+    max-width: 1400px;
+    margin: auto;
+}
+
+
+.logo img {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: inset 0 0 2px var(--color-light-silver), 0 0 5px var(--color-light-silver);
+}
+
+/* navigation menu section */
+
+.nav-menu ul a {
+    font-size: 1.2rem;
+    transition: box-shadow 0.4s ease-out;
+    padding: 0.5rem;
+    color: var(--color-light-silver);
+}
+
+.nav-menu ul a:hover {
+    color: var(--color-light-silver);
+    box-shadow: 0 0 5px 2px var(--color-silver);
+}
+
+.nav-menu ul {
+    display: flex;
+    text-transform: capitalize;
+    padding: 0;
+    gap: 2rem;
+    font-family: var(--heading-font);
+    font-weight: 500;
+}
+
+/* header bar  */
+
+header {
+    width: 100%;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-purple);
+    padding: 10px 20px;
+    position: relative;
+}
+
+header.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 0 5px 2px var(--color-black);
+}
+
+.header h2 {
+    font-size: 1.6rem;
+    margin: 15px;
+}
+
+/* hamburger menu  */
+
+.menu-icon {
+    display: none;
+}
+
+.contact-section {
+    padding: 50px 0;
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+}
+
+.contact-section .contact-container {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 30px;
+}
+
+.contact-section .contact-container .form-container {
+    flex: 1;
+}
+
+.contact-section .contact-container .contact-details {
+    flex: 1;
+}
+
+
+.contact-section .contact-details .info {
+    margin-bottom: 30px;
+    color: var(--color-charcoal);
+}
+
+.contact-section .contact-details .info h3 {
+    margin-bottom: 5px;
+}
+
+
+
+
+.product-form {
+    width: 60%;
+    border: 1px solid var(--color-black);
+    padding: 1rem;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.asterix::after {
+    content: "*";
+    color: red;
+}
+
+fieldset {
+    border-radius: 6px;
+    padding: 1rem;
+    border: 0.1px solid var(--color-charcoal);
+}
+
+legend {
+    margin: 0 15px;
+    padding: 6px;
+    font-size: 1.3rem;
+    color: var(--color-charcoal);
+    font-family: var(--heading);
+    font-weight: 500;
+}
+
+fieldset>label {
+    display: block;
+    font-size: 1.1rem;
+    margin: 10px 0;
+    color: var(--color-black);
+    font-family: var(--text);
+    font-weight: 300;
+}
+
+span {
+    font-size: 1rem;
+    font-style: italic;
+}
+
+/* ratting-stars */
+
+.stars {
+    display: flex;
+    justify-content: left;
+    flex-direction: row-reverse;
+}
+
+.stars>input {
+    display: none;
+}
+
+.stars>label {
+    font-size: 1.5rem;
+    padding: 0.4em;
+    transition: color 3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.stars>label:hover {
+    transform: scale(1.3);
+}
+
+.stars label::before {
+    content: "☆";
+    transition: color 0.3s ease, content 0.3s ease;
+}
+
+.stars input:checked~label::before {
+    content: "★";
+    color: var(--color-purple);
+}
+
+.stars>label:hover::before,
+.stars>label:hover~label::before {
+    content: "★";
+    color: var(--color-purple);
+}
+
+/* inputs */
+
+input[type="date"],
+textarea,
+input[type="text"],
+input[type="date"],
+select {
+    display: block;
+    padding: 10px;
+    width: 100%;
+    appearance: none;
+    border-radius: 10px;
+}
+
+input[type="checkbox"]:checked {
+    accent-color: var(--color-purple);
+}
+
+input[type="submit"] {
+    display: block;
+    margin: 10px;
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    margin: 0.8rem auto;
+    border-radius: 10px;
+    font-family: var(--text);
+    font-weight: 500;
+    border: none;
+    background-color: var(--background-main);
+    color: var(--color-light-silver);
+    font-size: 1.2rem;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--background-alt);
+}
+
+input:required,
+select {
+    border-bottom: 8px solid var(--color-black);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    background-color: var(--color-silver);
+}
+
+
+.map {
+    width: 100%;
+}
+footer {
+    background-color: var(--color-purple);
+    color: var(--color-light-silver);
+    text-align: center;
+    padding: 2rem;
+    box-shadow: 0 0 3px 2px var(--color-charcoal);
+    margin-top: 10px;
+    font-family: "Ubuntu", var(--text-font);
+    font-weight: 600;
+}
+
+@media (max-width: 900px) {
+
+    .logo img {
+        max-width: 80px;
+    }
+    .contact-section .contact-details .info h3 {
+        font-size: 1.2rem;
+    }
+
+    .header h2 {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    h1,
+    h2,
+    h3 {
+        font-size: 2rem;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .nav-menu ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        color: var(--color-black);
+    }
+
+    .nav-menu ul li {
+        border-bottom: 1px solid var(--color-charcoal);
+    }
+
+    .nav-menu ul li a {
+        color: var(--color-charcoal);
+    }
+
+    .menu-icon {
+        display: block;
+        font-size: 2.5rem;
+    }
+
+    .menu-btn {
+        background-color: var(--color-purple);
+        color: var(--color-black);
+    }
+
+    .nav-menu.show-menu {
+        display: block;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: rgba(192, 192, 192, 0.45);
+        border-radius: 0 0 10px 10px;
+        z-index: 9999;
+        transition: 0.5s;
+    }
+
+    .contact-section .contact-container {
+        flex-direction: column-reverse;
+    }
+
+}
+

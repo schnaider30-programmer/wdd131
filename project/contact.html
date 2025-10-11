@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="This is an online store offering a variety of products including men's, women's, and kids' clothing.">
+    <meta name="author" content="Jean Louis Schnaider">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,400;0,500;0,700;1,100;1,400;1,500;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer"> -->
+
+    <!-- <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"> -->
+
+    <link rel="stylesheet" href="styles/contact.css">
+
+    <title>ContactUs - Imperial Vault</title>
+    <script src="scripts/index.js" defer></script>
+    <script src="scripts/contact.js" defer></script>
+
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo"><img src="images/site-logo.webp" alt="Imperial Logo Image"></a>
+
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html">home</a></li>
+                <li><a href="products.html">Our Products</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </nav>
+
+        <div class="menu-icon">
+            <!-- <i class='bx bx-menu' id="hamburger-menu"></i> -->
+
+            <button class="menu-btn" aria-label="Menu" id="hamburger-menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </button>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <section class="contact-section" id="contact">
+            <div class="header">
+                <h2>Leave A Review</h2>
+            </div>
+            <div class="contact-container">
+
+                <form class="product-form" action="review.html" method="get">
+                
+                    <fieldset>
+                        <legend>Product Information</legend>
+                        <label class="asterix" for="product-name">Product Name</label>
+                        <select name="product-name" id="product-name" required>
+                            <option value="" disabled selected>Please Select a Product...▾</option>
+                        </select>
+                
+                        <label class="asterix">Overall Rating</label>
+                        <div class="stars">
+                            <input type="radio" name="rating" id="star5" required><label for="star5"></label>
+                            <input type="radio" name="rating" id="star4" required><label for="star4"></label>
+                            <input type="radio" name="rating" id="star3" required><label for="star3"></label>
+                            <input type="radio" name="rating" id="star2" required><label for="star2"></label>
+                            <input type="radio" name="rating" id="star1" required><label for="star1"></label>
+                        </div>
+                
+                        <label for="installation-date" class="asterix">Date of Purchase</label>
+                        <input type="date" id="installation-date" name="select-date" required>
+                    </fieldset>
+                
+                    <fieldset>
+                        <legend>Appreciation</legend>
+                        <label>What did you found most satisfying about your recent purchase with us ? <br><span>(Check all that apply)</span></label>
+                        <p></p>
+                
+                        <label for="availability"><input type="checkbox" id="availability" name="feature2" value="availability"> Availability</label>
+                        <label for="purchase"><input type="checkbox" id="purchase" name="feature2" value="purchase"> Ease of Purchase</label>
+                        <label for="design"><input type="checkbox" id="design" name="feature4" value="design"> Design</label>
+
+                        <label for="performance"><input type="checkbox" id="performance" name="feature3" value="performance">
+                            Performance</label>
+                        <label for="price"><input type="checkbox" id="price" name="feature2" value="price"> Price</label>
+                
+                        
+                        
+                        <label for="quality"><input type="checkbox" id="quality" name="feature1" value="quality">
+                            Product Quality</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Review Details</legend>
+                
+                        <label for="review"> Written Review <span>(optional)</span></label>
+                        <textarea name="written-review" id="review" placeholder="Write your review here..." rows="6"></textarea>
+                
+                
+                        <label for="user-name">Your Name <span>(optional)</span></label>
+                        <input id="user-name" type="text" placeholder="Your name...">
+                
+                
+                    </fieldset>
+                
+                    <input type="submit" value="Post My Review">
+                </form>
+
+                <div class="contact-details">
+                    <div class="info">
+                        <h3>Adress</h3>
+                        <p>Haiti, Port-au-Prince, #39 Lillavois</p>
+                    </div>
+                    <div class="info">
+                        <h3>Email</h3>
+                        <p>damonsalvatore@gmail.com</p>
+                    </div>
+                    <div class="info">
+                        <h3>Phone</h3>
+                        <p>+509 4200 3050</p>
+                    </div>
+                    <div class="social-media">
+                        <a href="facebook.com"><i class="fab fa-facebook-f"></i></a>
+                        <a href="instagram.com"><i class="fab fa-instagram"></i></a>
+                        <a href="twitter.com"><i class="fab fa-twitter"></i></a>
+                        <a href="youtube.com"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <iframe class="map"
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15123.636878322517!2d-72.24072265!3d18.6231525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sht!4v1755987434281!5m2!1sfr!2sht" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> | Schnaider Jean Louis | Haiti</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>
