@@ -46,7 +46,6 @@ main {
 }
 
 .nav-menu ul a:hover {
-    color: var(--color-light-silver);
     box-shadow: 0 0 5px 2px var(--color-silver);
 }
 
