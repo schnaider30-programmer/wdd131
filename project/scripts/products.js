@@ -63,7 +63,7 @@ const products = [
         imgLink: "images/watch1.webp"
     },
 
-    {
+    { 
         name: "sarto by franco sarto",
         description: "women's flexa elia square toe dress booties",
         price: "$200.00",
@@ -132,7 +132,7 @@ const products = [
         description: "Women's Short-Sleeve Fit & flare Dress",
         price: "$129.00",
         rating: "★★★☆☆",
-        imgLink: "images/clavin-dress-covered.webp"
+        imgLink: "images/calvin-dress.webp"
     },
 
     {
@@ -145,7 +145,7 @@ const products = [
 
     {
         name: "Stuhrling",
-        description: "Women s VivreLuxe 34mm Rectangle Quartz Watch, Crystal Bezel, Roman Numeral Dial, Stainless Steel Bracelet",
+        description: "Women's VivreLuxe 34mm Rectangle Quartz Watch, Crystal Bezel, Roman Numeral Dial, Stainless Steel Bracelet",
         price: "$645.00",
         rating: "★★★★☆",
         imgLink: "images/stuhrling.webp"
@@ -209,7 +209,7 @@ const products = [
 
     {
         name: "Calvin Klein",
-        description: "Men's Brodie Lace Up Dress Oxford",
+        description: "Men's Brodie Lace Up Shoe Dress Oxford ",
         price: "$119.00",
         rating: "★★★☆☆",
         imgLink: "images/calvin-klein-shoe.webp"
@@ -217,7 +217,7 @@ const products = [
 
     {
         name: "Marc Joseph New York",
-        description: "Mens Cloud Street Hands-Free Slip On Lightweight Leather Oxfords",
+        description: "Men's Cloud Street Hands-Free Slip On Lightweight Leather Oxford Shoe",
         price: "$175.00",
         rating: "★★★★☆",
         imgLink: "images/marc-joseph.webp"
@@ -225,14 +225,15 @@ const products = [
 
     {
         name: "Marc Joseph New York",
-        description: "Men's Elliot Road Hands-Free Slip On Technology Buckle Loafers",
+        description: "Men's Elliot Road Hands-Free Slip On Technology Buckle Loafers Shoe",
         price: "$175.00",
         rating: "★★☆☆☆",
         imgLink: "images/marc-jos.webp"
     }
 ];
 
-const isMen = p => { const desc = p.description.toLowerCase();
+const isMen = p => {
+    const desc = p.description.toLowerCase();
     return desc.startsWith("men's") || desc.includes("men's ");
 };
 
@@ -241,12 +242,15 @@ const isWomen = p => {
     return desc.startsWith("women's") || desc.includes("women's ");
 };
 
+const accessory = products.filter(p => { return !p.description.toLowerCase().includes("women") && !p.description.toLowerCase().includes("men") });
 
-const accessory = products.filter(p => {  return !p.description.toLowerCase().includes("women") && !p.description.toLowerCase().includes("men")});
-
-const menShoe = products.filter(product => isMen(product) && product.description.toLowerCase().includes("shoe") && !product.description.toLowerCase().includes("sneaker") && !product.description.toLowerCase().includes("sneaker") && !product.description.toLowerCase().includes("suit") && !product.description.toLowerCase().includes("women's"));
+const menShoe = products.filter(product => isMen(product) && product.description.toLowerCase().includes("shoe") && !product.description.toLowerCase().includes("sneaker") && !product.description.toLowerCase().includes("suit") && !product.description.toLowerCase().includes("women's"));
 
 const menSuit = products.filter(product => isMen(product) && product.description.toLowerCase().includes("suit") && !product.description.toLowerCase().includes("women's"));
+
+const menWatch = products.filter(product => !product.description.toLowerCase().includes("women") && isMen(product) && (product.description.toLowerCase().includes("watch") || product.description.toLowerCase().includes("bracelet")));
+
+const womenWatch = products.filter(product => product.description.toLowerCase().includes("women") && isWomen(product) && (product.description.toLowerCase().includes("watch") || product.description.toLowerCase().includes("bracelet")));
 
 const menSneakers = products.filter(product => isMen(product) && product.description.toLowerCase().includes("sneaker") && !product.description.toLowerCase().includes("women's"));
 
@@ -256,17 +260,23 @@ const womenDress = products.filter(product => isWomen(product) && product.descri
 
 const womenSneakers = products.filter(product => isWomen(product) && product.description.toLowerCase().includes("sneaker"));
 
-const womenShoe = products.filter(
-    product => isWomen(product) &&
-        ( product.description.toLowerCase().includes("shoe") || product.description.toLowerCase().includes("boot") || product.description.toLowerCase().includes("pump")) && !product.description.toLowerCase().includes("sneaker") && !product.description.toLowerCase().includes("dress"));
+const womenShoe = products.filter(product => isWomen(product) && (product.description.toLowerCase().includes("shoe") || product.description.toLowerCase().includes("toe") || product.description.toLowerCase().includes("pump")) && !product.description.toLowerCase().includes("sneaker") && !(product.description.toLowerCase().includes("dress") && !product.description.toLowerCase().includes("toe")));
 
-createProductCard(menShoe, "shoe-collection");
-createProductCard(womenShoe, "women-shoe-collection");
-createProductCard(menSuit, "suit-collection");
-createProductCard(menSneakers, "sneaker-collection");
-createProductCard(womenSneakers, "women-sneaker-collection");
-createProductCard(womenDress, "dresses");
-createProductCard(accessory, "tech-collection")
+const productCollection = [
+    { data: menShoe, id: "shoe-collection" },
+    { data: womenShoe, id: "women-shoe-collection" },
+    { data: menSuit, id: "suit-collection" },
+    { data: menSneakers, id: "sneaker-collection" },
+    { data: womenSneakers, id: "women-sneaker-collection" },
+    { data: womenDress, id: "dresses" },
+    { data: accessory, id: "tech-collection" },
+    { data: menWatch, id: "men-watch" },
+    { data: womenWatch, id: "women-watch" }
+];
+
+productCollection.forEach(({ data, id }) => {
+    createProductCard(data, id);
+});
 
 function createProductCard(productArray, nameContainer) {
 
@@ -302,20 +312,49 @@ function createProductCard(productArray, nameContainer) {
         stars.classList.add("stars");
         stars.innerHTML = product.rating;
 
+        const button = document.createElement("button");
+        button.className = "add-to-cart";
+        button.setAttribute("type", "button");
+        button.textContent = "Add to Cart"
+
+
+
         card.appendChild(wrapper);
         card.appendChild(h2);
         card.appendChild(description);
         card.appendChild(price);
         card.appendChild(stars);
+        card.appendChild(button)
         const cardContainer = document.querySelector(`.${nameContainer} .product-grid`);
 
         cardContainer.appendChild(card);
         container.appendChild(cardContainer);
-
-
     });
 
     //const container = document.getElementsByClassName(nameContainer[0]);
     //  // because getElementByClassName return a collection like an Array
 
 }
+
+let cartCount = localStorage.getItem("cartCount");
+cartCount = cartCount ? parseInt(cartCount) : 0;
+
+const countDisplay = document.getElementById("cart-count")
+countDisplay.textContent = cartCount;
+
+const buttons = document.querySelectorAll(".add-to-cart");
+
+buttons.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+        cartCount++;
+        countDisplay.textContent = cartCount;
+        localStorage.setItem("cartCount", cartCount);
+
+        const product = products[index];
+
+        let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+        cartItems.push(product);
+
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    })
+})

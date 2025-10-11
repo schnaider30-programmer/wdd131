@@ -20,14 +20,20 @@
 
 <body>
     <header>
-        <a href="#" class="logo"><img src="images/site-logo.webp" alt="Imperial Logo Image"></a>
+        <a href="#" class="logo"><img src="images/site-logo.webp" alt="Imperial Logo Image" loading="lazy"></a>
+
+        <div class="cart-container">
+            <a href="checkout.html" class="cart-link"><img src="images/shopping-cart-svg.svg" alt="Shopping Cart Icon" class="cart-icon" loading="lazy"><span id="cart-count">0</span></a>
+        </div>
 
         <nav class="nav-menu">
             <ul>
                 <li><a href="index.html">home</a></li>
                 <li><a href="products.html">Our Products</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="#" onclick="return false">Help</a></li>
+                <li><a href="checkout.html" aria-current="page">Checkout</a></li>
+
+       
             </ul>
         </nav>
 
@@ -50,7 +56,7 @@
                 <div class="hero-slide active">
                     <picture>
                         <source media="(max-width: 900px)" srcset="images/hero1-small.webp">
-                        <img src="images/hero-img1.webp" alt="Hero Image 1">
+                        <img src="images/hero-img1.webp" alt="Hero Image 1" loading="lazy">
                     </picture>
                     <div class="hero-text">
                         <h1>Discover new trends</h1>
@@ -62,7 +68,7 @@
                     <picture>
                         <source media="(max-width: 1200px)" srcset="images/hero2-small.webp">
                         <source media="(max-width: 700px)" srcset="images/hero2-medium.webp">
-                        <img src="images/s-dress-women.webp" alt="Fashion Editorial">
+                        <img src="images/s-dress-women.webp" alt="Fashion Editorial" loading="lazy">
                     </picture>
                     <div class="hero-text">
                         <h1>Timeless elegance</h1>
@@ -73,7 +79,7 @@
                 <div class="hero-slide">
                     <picture>
                         <source media="(max-width: 700px)" srcset="images/hero3-img.webp">
-                        <img src="images/watch-photography(1).webp" alt="Luxury Watch">
+                        <img src="images/watch-photography(1).webp" alt="Luxury Watch" loading="lazy">
 
                     </picture>
                     <div class="hero-text">
@@ -97,27 +103,27 @@
                 </div>
 
                 <div class="category-item">
-                    <img src="images/anne-klein.webp" alt="">
+                    <img src="images/anne-klein.webp" alt="Dress Featured Image" loading="lazy">
                     <h3>Women Dress</h3>
                 </div>
 
                 <div class="category-item">
-                    <img src="images/sarto.webp" alt="">
+                    <img src="images/sarto.webp" alt="Shoes Featured Image" loading="lazy">
                     <h3>Women's shoes</h3>
                 </div>
 
                 <div class="category-item">
-                    <img src="images/shoe.webp" alt="">
+                    <img src="images/shoe.webp" alt="Shoes Featuring Image" loading="lazy">
                     <h3>Men's Shoes</h3>
                 </div>
 
                 <div class="category-item">
-                    <img src="images/show-watch.webp" alt="">
+                    <img src="images/show-watch.webp" alt="Watches Featuring Image" loading="lazy">
                     <h3>Watches</h3>
                 </div>
 
                 <div class="category-item">
-                    <img src="images/laptop.webp" alt="">
+                    <img src="images/laptop.webp" alt="Laptop Featuring Image" loading="lazy">
                     <h3>Electronics</h3>
                 </div>
             </div>
@@ -131,7 +137,7 @@
             <div class="top-products-section product-grid">
 
                 <div class="product-card">
-                    <img src="images/braveman.webp" alt="Men's Suit">
+                    <img src="images/braveman.webp" alt="Men's Suit" loading="lazy">
                     <h2>Classic Shirt</h2>
                     <p class="description">men's 3-piece classic fit performance stretch suit</p>
                     <p class="price">$350.00</p>
@@ -139,7 +145,7 @@
                 </div>
 
                 <div class="product-card">
-                    <img src="images/nine-west.webp" alt="Nine West Women Shoe">
+                    <img src="images/nine-west.webp" alt="Nine West Women Shoe" loading="lazy">
                     <h2>Nine West</h2>
                     <p class="description">women's kadon pointy toe block heel dress booties</p>
                     <p class="price">$99.00</p>
@@ -147,7 +153,7 @@
                 </div>
 
                 <div class="product-card">
-                    <img src="images/ted-baker.webp" alt="Shoes">
+                    <img src="images/ted-baker.webp" alt="Shoes" loading="lazy">
                     <h2>Ted Baker</h2>
                     <p class="description">Men's Hackney Lace Up Shoe</p>
                     <p class="price">$133.00</p>
@@ -155,7 +161,7 @@
                 </div>
 
                 <div class="product-card">
-                    <img src="images/watch1.webp" alt="Sneakers">
+                    <img src="images/watch1.webp" alt="men's quest swiss quartz ionic gold pvd steel 40mm watch" loading="lazy">
                     <h2>movado</h2>
                     <p class="description">men's quest swiss quartz ionic gold pvd steel 40mm watch</p>
                     <p class="price">$695.00</p>
@@ -169,7 +175,7 @@
         <section class="client-reviews">
             <div class="reviews">
                 <h2 class="heading">Client Review</h2>
-                <img src="images/client-review.webp" alt="">
+                <img src="images/client-review.webp" alt="Client Review Image (Website Designer, Me)" loading="lazy">
                 <p>Imperial Vault completely exceeded my expectations. The product quality is outstanding, <br>and the
                     customer service was
                     genuinely attentive. I found exactly what I needed, and the delivery was faster than I anticipated.
@@ -181,7 +187,12 @@
         </section>
     </main>
     <footer>
-        <p>&copy; <span id="currentYear"></span> | Schnaider Jean Louis | Haiti</p>
+
+        <p>&copy; <span id="currentYear"></span> | Imperial Vault | Haiti</p>
+        
+        <p>Reference: Product information and visuals on this page were sourced from <a href="https://www.macys.com">Macy's official website</a>.</p>
+
+        <p>Schnaider Jean Louis</p>
         <p id="lastModified"></p>
     </footer>
 </body>

@@ -58,6 +58,34 @@ main {
     font-weight: 500;
 }
 
+/* chart  */
+
+.cart-container {
+    margin-left: auto;
+    padding: 0 1.5rem;
+}
+
+.cart-container:hover {
+    transform: scale(1.05);
+}
+
+.cart-link {
+    position: relative;
+}
+
+#cart-count {
+    position: absolute;
+    color: var(--color-light-silver);
+}
+
+.cart-icon {
+    width: 32px;
+    height: auto;
+    vertical-align: bottom;
+    margin-left: -5px;
+
+}
+
 /* header bar  */
 
 header {
@@ -282,7 +310,7 @@ header.sticky {
     padding: 12px 24px;
     margin: 20px;
     text-align: center;
-    background-color: var(--background-alt);
+    background-color: var(--color-purple);
     color: var(--color-silver);
     font-weight: bold;
     border-radius: 6px;
@@ -290,7 +318,6 @@ header.sticky {
 }
 
 .btn:hover {
-    /* background-color: #444; */
     color: var(--color-light-silver);
     transform: scale(1.05);
 }
@@ -343,6 +370,14 @@ footer {
     font-weight: 600;
 }
 
+footer a {
+    color: var(--color-light-silver);
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: blue;
+}
 
 
 @media (max-width: 900px) {
@@ -380,12 +415,11 @@ footer {
     }
 
     /* to target the stroke attribute of the svg  */
-    .menu-btn svg path {
-        stroke: var(--color-black);
-    }
     
     .menu-btn {
         background-color: var(--color-purple);
+        color: var(--color-light-silver);
+        border: none;
     }
 
     .nav-menu.show-menu {

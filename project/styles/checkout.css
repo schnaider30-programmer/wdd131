@@ -21,10 +21,16 @@
     font-family: "Ubuntu", Arial, Helvetica, sans-serif;
 }
 
+html, body {
+    height: 100%;
+    position: relative;
+}
+
 main {
     background-color: var(--color-light-silver);
-    max-width: 1400px;
+    max-width: 900px;
     margin: auto;
+    padding: 1rem;
 }
 
 
@@ -80,16 +86,15 @@ header.sticky {
     box-shadow: 0 0 5px 2px var(--color-black);
 }
 
-.header h2 {
-    font-size: 1.6rem;
-    margin: 15px;
-}
-
 /* chart  */
-
 .cart-container {
     margin-left: auto;
     padding: 0 1.5rem;
+}
+
+.cart {
+    width: 40px;
+    color: var(--color-purple);
 }
 
 .cart-container:hover {
@@ -110,8 +115,9 @@ header.sticky {
     height: auto;
     vertical-align: bottom;
     margin-left: -5px;
-
 }
+
+
 
 /* hamburger menu  */
 
@@ -119,174 +125,131 @@ header.sticky {
     display: none;
 }
 
-.contact-section {
-    padding: 50px 0;
-    max-width: 1200px;
-    width: 90%;
-    margin: auto;
-}
+/* confirmation overlay  */
 
-.contact-section .contact-container {
+.confirmation-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    /* background: var(--color-silver); */
     display: flex;
-    /* align-items: flex-end; */  /* if later i want to chage the layout of the adress section*/
-    gap: 50px;
-    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999999;
 }
 
-.contact-section .contact-container .form-container {
-    flex: 1;
-}
-
-.contact-section .contact-container .contact-details {
-    flex: 1;
-}
-
-
-.contact-section .contact-details .info {
-    margin-bottom: 30px;
-    color: var(--color-charcoal);
-}
-
-.contact-section .contact-details .info h3 {
-    margin-bottom: 5px;
-}
-
-
-
-
-.product-form {
-    width: 60%;
-    border: 1px solid var(--color-black);
-    padding: 1rem;
-    border-radius: 10px;
-    margin: auto;
-}
-
-.asterix::after {
-    content: "*";
-    color: red;
-}
-
-fieldset {
-    border-radius: 6px;
-    padding: 1rem;
-    border: 0.1px solid var(--color-charcoal);
-}
-
-legend {
-    margin: 0 15px;
-    padding: 6px;
-    font-size: 1.3rem;
-    color: var(--color-charcoal);
-    font-family: var(--heading);
-    font-weight: 500;
-}
-
-fieldset>label {
-    display: block;
-    font-size: 1.1rem;
-    margin: 10px 0;
-    color: var(--color-black);
-    font-family: var(--text);
-    font-weight: 300;
-}
-
-span {
-    font-size: 1rem;
-    font-style: italic;
-}
-
-/* ratting-stars */
-
-.stars {
-    display: flex;
-    justify-content: left;
-    flex-direction: row-reverse;
-}
-
-.stars>input {
-    display: none;
-}
-
-.stars>label {
+.confirmation-box {
+    background: var(--color-light-silver);
+    padding: 2rem 3rem;
+    border-radius: 8px;
     font-size: 1.5rem;
-    padding: 0.4em;
-    transition: color 3s ease-in-out, transform 0.2s ease-in-out;
+    font-weight: bold;
+    color: var(--color-purple);
+    text-align: center;
+    text-transform: capitalize;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.stars>label:hover {
-    transform: scale(1.3);
+/* main page style  */
+
+
+#cart-summary {
+    padding: 2rem;
+    background-color: var(--color-light-silver);
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+    margin: 2rem auto;
+    max-width: 600px;
 }
 
-.stars label::before {
-    content: "☆";
-    transition: color 0.3s ease, content 0.3s ease;
-}
-
-.stars input:checked~label::before {
-    content: "★";
+#cart-summary h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: var(--heading-font);
     color: var(--color-purple);
 }
 
-.stars>label:hover::before,
-.stars>label:hover~label::before {
-    content: "★";
-    color: var(--color-purple);
+#cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
 }
 
-/* inputs */
-
-input[type="date"],
-textarea,
-input[type="text"],
-input[type="date"],
-select {
-    display: block;
-    padding: 10px;
-    width: 100%;
-    appearance: none;
-    border-radius: 10px;
+.checkout-item {
+    display: flex;
+    gap: 1rem;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    max-width: 300px;
 }
 
-input[type="checkbox"]:checked {
-    accent-color: var(--color-purple);
+.checkout-img {
+    width: 100px;
+    height: auto;
+    border-radius: 6px;
+    object-fit: cover;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
 }
 
-input[type="submit"] {
-    display: block;
-    margin: 10px;
-    width: 100%;
-    max-width: 500px;
-    padding: 10px;
-    margin: 0.8rem auto;
-    border-radius: 10px;
-    font-family: var(--text);
-    font-weight: 500;
-    border: none;
-    background-color: var(--background-main);
-    color: var(--color-light-silver);
+.checkout-details {
+    flex: 1;
+    font-family: var(--text-font);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.checkout-details h3 {
     font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+    color: var(--color-charcoal);
 }
 
-input[type="submit"]:hover {
-    background-color: var(--background-alt);
+.checkout-details p {
+    margin: 0.2rem 0;
+    color: var(--color-black);
 }
 
-input:required,
-select {
-    border-bottom: 8px solid var(--color-black);
+.price {
+    font-weight: bold;
+    color: var(--color-purple);
 }
 
-input:focus,
-textarea:focus,
-select:focus {
-    background-color: var(--color-silver);
+#total-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 2rem;
+    color: var(--color-purple);
+}
+
+#confirm-order {
+    display: block;
+    margin: 2rem auto;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    background-color: var(--color-purple);
+    color: var(--color-silver);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: var(--heading-font);
+}
+
+#confirm-order:hover {
+    color: var(--color-light-silver);
+    transform: scale(1.05);
 }
 
 
-.map {
-    width: 100%;
-}
+
+
 footer {
     background-color: var(--color-purple);
     color: var(--color-light-silver);
@@ -307,24 +270,12 @@ footer a:hover {
     color: blue;
 }
 
+
+
 @media (max-width: 900px) {
 
     .logo img {
         max-width: 80px;
-    }
-    .contact-section .contact-details .info h3 {
-        font-size: 1.2rem;
-    }
-
-    .header h2 {
-        margin-top: 30px;
-        text-align: center;
-    }
-
-    h1,
-    h2,
-    h3 {
-        font-size: 2rem;
     }
 
     .nav-menu {
@@ -352,6 +303,8 @@ footer a:hover {
         font-size: 2.5rem;
     }
 
+    /* to target the stroke attribute of the svg  */
+
     .menu-btn {
         background-color: var(--color-purple);
         color: var(--color-light-silver);
@@ -368,14 +321,4 @@ footer a:hover {
         z-index: 9999;
         transition: 0.5s;
     }
-
-    .contact-section .contact-container {
-        flex-direction: column-reverse;
-    }
-
-    .product-form {
-        width: 90%;
-        margin: 0 auto;
-    }
 }
-
