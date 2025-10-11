@@ -49,7 +49,9 @@ confirmationBtn.addEventListener("click", () => {
     localStorage.removeItem("cartCount");
 
     cartItems = [];
-    //reset display element in page 
+    //reset display element in page
+
+    
     document.getElementById("cart-count").textContent = "0";
 
     cartList.innerHTML = "";
