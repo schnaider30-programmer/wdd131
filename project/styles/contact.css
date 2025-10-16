@@ -263,18 +263,19 @@ input[type="submit"] {
     font-family: var(--text);
     font-weight: 500;
     border: none;
-    background-color: var(--background-main);
+    background-color: var(--color-purple);
     color: var(--color-light-silver);
     font-size: 1.2rem;
 }
 
 input[type="submit"]:hover {
     background-color: var(--background-alt);
+    color: var(--color-light-silver);
 }
 
 input:required,
 select {
-    border-bottom: 8px solid var(--color-black);
+    border-bottom: 8px solid var(--color-purple);
 }
 
 input:focus,
