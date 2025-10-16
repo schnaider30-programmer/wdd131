@@ -10,6 +10,18 @@ cartCount = cartCount ? parseInt(cartCount) : 0;
 const countDisplay = document.getElementById("cart-count")
 countDisplay.textContent = cartCount;
 
+const menuIcon = document.getElementById("hamburger-menu");
+const navMenu = document.querySelector(".nav-menu");
+
+menuIcon.addEventListener("click", () => {
+    navMenu.classList.toggle("show-menu");
+});
+
+if (cartCount < 1) {
+    cartList.innerHTML = "Your Cart is Empty!"
+    cartList.style.color = "rgba(75, 0, 130, 1)";
+}
+
 cartItems.forEach(item => {
     const li = document.createElement("li");
     li.innerHTML = `
@@ -54,7 +66,9 @@ confirmationBtn.addEventListener("click", () => {
     
     document.getElementById("cart-count").textContent = "0";
 
-    cartList.innerHTML = "";
+    cartList.innerHTML = "Your Cart is Empty";
+    cartList.style.color = "rgba(75, 0, 130, 1)";
+
     totalDisplay.textContent = "Total : $0.00";
    
     showConfirmationMessage("Your order has been sealed in the Imperial Vault!");
