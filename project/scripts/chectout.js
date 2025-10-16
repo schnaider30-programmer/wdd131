@@ -22,7 +22,7 @@ cartItems.forEach(item => {
     cartList.appendChild(li);
 
     //convertire le prix en nombre en retirant le "$"
-    const priceNum = parseFloat(item.price.replace("$", ""));
+    const priceNum = parseFloat(item.price.replace("$", "").replace(",", "")); //pour remplacer le signe dollar et les virgule, pour les enlever
     total += priceNum;
 });
 
@@ -31,7 +31,7 @@ totalDisplay.textContent = `Total : $${total.toFixed(2)}`;
 const confirmationBtn = document.getElementById("confirm-order");
 
 confirmationBtn.addEventListener("click", () => {
-    if (cartItems.length === 0) { 
+    if (cartItems.length < 1 ) { 
         showConfirmationMessage("The vault is empty noble one. Select your items before sealing the order.");
         return;
     }
@@ -62,7 +62,7 @@ confirmationBtn.addEventListener("click", () => {
 
 function showConfirmationMessage(message) {
     const overlay = document.createElement("div");
-    overlay.className = "Confirmation-overlay";
+    overlay.className = "confirmation-overlay";
 
     const box = document.createElement("div");
     box.className = "confirmation-box";
@@ -70,7 +70,8 @@ function showConfirmationMessage(message) {
 
     overlay.appendChild(box);
 
-    document.body.insertBefore(overlay, document.body.firstChild);
+    // document.body.insertBefore(overlay, document.body.firstChild);
+    document.body.appendChild(overlay);
 
     setTimeout(() => { overlay.remove(); }, 3000);
 

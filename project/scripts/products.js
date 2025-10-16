@@ -280,7 +280,11 @@ productCollection.forEach(({ data, id }) => {
 
 function createProductCard(productArray, nameContainer) {
 
-    const container = document.querySelector(`.${nameContainer}`)
+    const container = document.querySelector(`.${nameContainer}`);
+    let cartCount = parseInt(localStorage.getItem("cartCount")) || 0;
+    const countDisplay = document.querySelector("#cart-count");
+
+    const cardContainer = document.querySelector(`.${nameContainer} .product-grid`);
 
     productArray.forEach(product => { 
         let card = document.createElement("div");
@@ -317,6 +321,18 @@ function createProductCard(productArray, nameContainer) {
         button.setAttribute("type", "button");
         button.textContent = "Add to Cart"
 
+        
+        
+        button.addEventListener("click", () => {
+            let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+            cartItems.push(product);
+            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+            let cartCount = parseInt(localStorage.getItem("cartCount")) || 0;
+            cartCount++;
+            countDisplay.textContent = cartCount;
+            localStorage.setItem("cartCount", JSON.stringify(cartCount));
+        })
 
 
         card.appendChild(wrapper);
@@ -325,36 +341,10 @@ function createProductCard(productArray, nameContainer) {
         card.appendChild(price);
         card.appendChild(stars);
         card.appendChild(button)
-        const cardContainer = document.querySelector(`.${nameContainer} .product-grid`);
-
         cardContainer.appendChild(card);
-        container.appendChild(cardContainer);
     });
 
     //const container = document.getElementsByClassName(nameContainer[0]);
     //  // because getElementByClassName return a collection like an Array
 
 }
-
-let cartCount = localStorage.getItem("cartCount");
-cartCount = cartCount ? parseInt(cartCount) : 0;
-
-const countDisplay = document.getElementById("cart-count")
-countDisplay.textContent = cartCount;
-
-const buttons = document.querySelectorAll(".add-to-cart");
-
-buttons.forEach((btn, index) => {
-    btn.addEventListener("click", () => {
-        cartCount++;
-        countDisplay.textContent = cartCount;
-        localStorage.setItem("cartCount", cartCount);
-
-        const product = products[index];
-
-        let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-        cartItems.push(product);
-
-        localStorage.setItem("cartItems", JSON.stringify(cartItems));
-    })
-})

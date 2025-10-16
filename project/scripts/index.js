@@ -17,6 +17,8 @@ document.querySelectorAll(".product-card img").forEach(img => {
     wrapper.appendChild(img)
 })
 
+
+
 const slides = document.querySelectorAll(".hero-slide"); 
 let current = 0;
 
